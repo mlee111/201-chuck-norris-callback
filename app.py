@@ -35,7 +35,7 @@ app.layout = html.Div([
 
 ######### Interactive callbacks go here #########
 @app.callback(dash.dependencies.Output('your-output-here', 'children'),
-              [dash.dependencies.Input('your-input-here', 'label')])
+              [dash.dependencies.Input('your-input-here', 'value')])
 def display_value(whatever_you_chose):
     if (whatever_you_chose != 'Pick your meal'):
         return f'You have ordered a {whatever_you_chose}.'
@@ -43,7 +43,7 @@ def display_value(whatever_you_chose):
         return 'Pick a menu item'
 
 @app.callback(dash.dependencies.Output('image-output', 'src'),
-              [dash.dependencies.Input('your-input-here', 'value')])
+              [dash.dependencies.Input('your-input-here', 'label')])
 def display_value(whatever_you_chose):
     return whatever_you_chose
 
