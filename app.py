@@ -20,7 +20,8 @@ app.title='Mickey D\'s'
 app.layout = html.Div([
     html.H2(heading1),
     html.Img(id='image-output', src='chucknorris.jpg'),
-    html.Img(id='image-output', src='chicken.jpg'),
+    html.Img(src='chicken.jpg'),
+    html.Img(src='double.jpg'),
     dcc.Dropdown(id='your-input-here',
                 options=[{'value': i, 'label': list_of_choices[i]} for i in range(0, 5)],
                 value='Pick your meal',
