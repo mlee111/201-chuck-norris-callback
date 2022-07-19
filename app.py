@@ -22,7 +22,7 @@ app.layout = html.Div([
     html.H2(heading1),
     html.Img(id='image-output'),
     dcc.Dropdown(id='your-input-here',
-                options=[{'label': list_of_choices[i], 'value': list_of_images[i]} for i in range(0, 4)],
+                options=[{'label': list_of_images[i], 'value': list_of_choices[i]} for i in range(0, 5)],
                 value='Pick your meal',
                 style={'width': '500px'}),
     html.Br(),
