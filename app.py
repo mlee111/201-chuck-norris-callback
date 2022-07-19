@@ -8,7 +8,7 @@ import os
 list_of_choices=['Pick your meal', 'McDouble', 'McRib', 'McNuggets', 'McChicken']
 githublink = 'https://github.com/austinlasseter/chuck_norris_execution'
 image1='download.jpg'
-list_of_images=['download.jpg', 'double.jpeg', 'rib.jpeg', 'nuggies.jpeg', 'chicken.jpeg']
+list_of_images=['download.png', 'double.jpeg', 'rib.jpeg', 'nuggies.jpeg', 'chicken.jpeg']
 heading1='McDonald\'s menu'
 
 ########### Initiate the app
@@ -37,7 +37,7 @@ app.layout = html.Div([
 @app.callback(dash.dependencies.Output('your-output-here', 'children'),
               [dash.dependencies.Input('your-input-here', 'value')])
 def display_value(whatever_you_chose):
-    if (whatever_you_chose != 'Pick your meal'):
+    if (whatever_you_chose != 0):
         return f'You have ordered a {list_of_choices[whatever_you_chose]}.'
     else:
         return 'Pick a menu item'
@@ -45,6 +45,7 @@ def display_value(whatever_you_chose):
 @app.callback(dash.dependencies.Output('image-output', 'src'),
               [dash.dependencies.Input('your-input-here', 'value')])
 def display_value(whatever_you_chose):
+    print(list_of_images[whatever_you_chose])
     return list_of_images[whatever_you_chose]
 
 
