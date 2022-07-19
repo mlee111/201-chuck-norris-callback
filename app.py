@@ -19,7 +19,7 @@ app.title='Mickey D\'s'
 ####### Layout of the app ########
 app.layout = html.Div([
     html.H2(heading1),
-    html.Img(id='image-output', src='chicken.jpeg'),
+    html.Img(id='image-output', src=''),
     dcc.Dropdown(id='your-input-here',
                 options=[{'value': i, 'label': list_of_choices[i]} for i in range(0, 5)],
                 value='Pick your meal',
@@ -44,7 +44,7 @@ def display_value(whatever_you_chose):
 @app.callback(dash.dependencies.Output('image-output', 'src'),
               [dash.dependencies.Input('your-input-here', 'value')])
 def display_value(whatever_you_chose):
-    return list_of_images[whatever_you_chose]
+    return app.get_asset_url(list_of_images[whatever_you_chose])
 
 
 ######### Run the app #########
