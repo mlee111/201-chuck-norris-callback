@@ -19,10 +19,10 @@ app.title='Mickey D\'s'
 ####### Layout of the app ########
 app.layout = html.Div([
     html.H2(heading1),
-    html.Img(id='image-output', src=app.get_asset_url('download.jpg')),
+    html.Img(id='image-output', src=app.get_asset_url('download.png')),
     dcc.Dropdown(id='your-input-here',
                 options=[{'value': i, 'label': list_of_choices[i]} for i in range(0, 5)],
-                value='Pick your meal',
+                value=list_of_choices[0],
                 style={'width': '500px'}),
     html.Br(),
     html.Div(id='your-output-here', children=''),
