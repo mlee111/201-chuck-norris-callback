@@ -36,10 +36,7 @@ app.layout = html.Div([
 @app.callback(dash.dependencies.Output('your-output-here', 'children'),
               [dash.dependencies.Input('your-input-here', 'value')])
 def display_value(whatever_you_chose):
-    if (whatever_you_chose != 0):
-        return f'You have ordered a {list_of_choices[whatever_you_chose]}.'
-    else:
-        return 'Pick a menu item'
+    return f'You have ordered a {list_of_choices[whatever_you_chose]}.'
 
 @app.callback(dash.dependencies.Output('image-output', 'src'),
               [dash.dependencies.Input('your-input-here', 'value')])
