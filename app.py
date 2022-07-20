@@ -5,9 +5,9 @@ import dash_html_components as html
 import os
 
 ###### Set up variables
-list_of_choices=['Pick your meal', 'McDouble', 'McRib', 'McNuggets', 'McChicken']
+list_of_choices=['McDouble', 'McRib', 'McNuggets', 'McChicken']
 githublink = 'https://github.com/austinlasseter/chuck_norris_execution'
-list_of_images=['download.png', 'double.jpeg', 'rib.jpeg', 'nuggies.jpeg', 'chicken.jpeg']
+list_of_images=['double.jpeg', 'rib.jpeg', 'nuggies.jpeg', 'chicken.jpeg']
 heading1='McDonald\'s menu'
 
 ########### Initiate the app
@@ -21,8 +21,8 @@ app.layout = html.Div([
     html.H2(heading1),
     html.Img(id='image-output', src=app.get_asset_url('download.png')),
     dcc.Dropdown(id='your-input-here',
-                options=[{'value': i, 'label': list_of_choices[i]} for i in range(0, 5)],
-                value=list_of_choices[0],
+                options=[{'value': i, 'label': list_of_choices[i]} for i in range(0, 4)],
+                value='McDouble',
                 style={'width': '500px'}),
     html.Br(),
     html.Div(id='your-output-here', children=''),
